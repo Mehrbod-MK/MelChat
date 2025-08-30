@@ -77,9 +77,9 @@
             buttonStartChatting.FlatStyle = FlatStyle.Flat;
             buttonStartChatting.Font = new Font("Segoe UI", 20F);
             buttonStartChatting.ForeColor = Color.FromArgb(81, 149, 210);
-            buttonStartChatting.Location = new Point(189, 249);
+            buttonStartChatting.Location = new Point(151, 249);
             buttonStartChatting.Name = "buttonStartChatting";
-            buttonStartChatting.Size = new Size(249, 96);
+            buttonStartChatting.Size = new Size(324, 96);
             buttonStartChatting.TabIndex = 3;
             buttonStartChatting.Text = "Start Chatting!";
             buttonStartChatting.UseVisualStyleBackColor = false;
