@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MelChatClientUI", "MelChatC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MelChatServerCLI", "MelChatServerCLI\MelChatServerCLI.csproj", "{4E6CD841-E326-40B0-A667-60F18E09B75D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MelChatAPI", "MelChatAPI\MelChatAPI.csproj", "{C8D6AEEE-4397-4B9A-9298-18EB6477E1A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4E6CD841-E326-40B0-A667-60F18E09B75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E6CD841-E326-40B0-A667-60F18E09B75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E6CD841-E326-40B0-A667-60F18E09B75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D6AEEE-4397-4B9A-9298-18EB6477E1A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D6AEEE-4397-4B9A-9298-18EB6477E1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D6AEEE-4397-4B9A-9298-18EB6477E1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D6AEEE-4397-4B9A-9298-18EB6477E1A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

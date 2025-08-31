@@ -15,11 +15,12 @@ namespace MelChatServerCLI.Models
         public static readonly string CurrentServerDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
         public static readonly string ServerConfigurationFilePath = Path.Combine(CurrentServerDirectory, SERVER_CONFIGURATION_FILE_NAME);
 
+        private static readonly JsonSerializerOptions serializerOptions = new JsonSerializerOptions() { WriteIndented = true };
+
         public int ServerPort { get; set; } = 9090;
 
         public static void SaveServerConfigurations(ServerConfigurations configurationsInstance)
         {
-            JsonSerializerOptions serializerOptions = new JsonSerializerOptions() { WriteIndented = true };
             string configurationsJson = JsonSerializer.Serialize(configurationsInstance, serializerOptions);
             File.WriteAllText(ServerConfigurationFilePath, configurationsJson);
         }
