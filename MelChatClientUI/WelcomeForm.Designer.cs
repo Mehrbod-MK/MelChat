@@ -83,6 +83,7 @@
             buttonStartChatting.TabIndex = 3;
             buttonStartChatting.Text = "Start Chatting!";
             buttonStartChatting.UseVisualStyleBackColor = false;
+            buttonStartChatting.Click += buttonStartChatting_Click;
             // 
             // labelAbout
             // 

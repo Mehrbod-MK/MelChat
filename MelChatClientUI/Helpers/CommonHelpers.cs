@@ -21,5 +21,23 @@ namespace MelChatClientUI.Helpers
         {
             return Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
         }
+
+        public static void IndicateFieldMessage(Bitmap icon, string message, NotifyIndicatorTypes indicatorType, PictureBox iconPictureBox, Label labelInfo)
+        {
+            iconPictureBox.Image = icon;
+            labelInfo.Text = message;
+            switch(indicatorType)
+            {
+                case NotifyIndicatorTypes.Information:
+                    labelInfo.ForeColor = Color.Gray;
+                    break;
+                case NotifyIndicatorTypes.Warning:
+                    labelInfo.ForeColor = Color.Olive;
+                    break;
+                case NotifyIndicatorTypes.Error:
+                    labelInfo.ForeColor = Color.Red;
+                    break;
+            }
+        }
     }
 }
