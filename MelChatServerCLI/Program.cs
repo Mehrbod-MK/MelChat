@@ -1,10 +1,15 @@
-﻿namespace MelChatServerCLI
+﻿using MelChatServerCLI.Models;
+using System.Net.Sockets;
+
+namespace MelChatServerCLI
 {
-    internal class Program
+    public class Program
     {
+        private static ServerConfigurations serverConfigurations = new ServerConfigurations();
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ServerConfigurations.LoadServerConfigurations(serverConfigurations);
         }
     }
 }
