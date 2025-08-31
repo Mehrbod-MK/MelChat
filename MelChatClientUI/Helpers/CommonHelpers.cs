@@ -19,7 +19,7 @@ namespace MelChatClientUI.Helpers
         /// <returns>Product version string, or N/A if not applicable.</returns>
         public static string GetVersionString()
         {
-            return FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion ?? "N/A";
+            return Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
         }
     }
 }

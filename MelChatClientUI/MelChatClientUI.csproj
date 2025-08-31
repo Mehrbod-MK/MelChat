@@ -9,7 +9,7 @@
     <ApplicationIcon>Resources\Icons\melChat.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <Title>MelChat WinForms Client</Title>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Mehrbod Molla Kazemi</Authors>
     <Company>Mehrbod Molla Kazemi</Company>
     <Description>MelChat WinForms Client application.</Description>
