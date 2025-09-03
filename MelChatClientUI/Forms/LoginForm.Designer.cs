@@ -37,7 +37,7 @@
             textBoxPassword = new TextBox();
             labelServerIP = new Label();
             textBoxServerIP = new TextBox();
-            buttonStartChatting = new Button();
+            buttonLogin = new Button();
             labelDontHaveAccount = new Label();
             linkLabelSignUp = new LinkLabel();
             linkLabelAccountRecovery = new LinkLabel();
@@ -122,7 +122,7 @@
             labelServerIP.Name = "labelServerIP";
             labelServerIP.Size = new Size(310, 39);
             labelServerIP.TabIndex = 7;
-            labelServerIP.Text = "MelChat™ Server IP/Domain:";
+            labelServerIP.Text = "MelChat™ Server IP/Domain:Port:";
             labelServerIP.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxServerIP
@@ -134,22 +134,23 @@
             textBoxServerIP.TextChanged += textBoxServerIP_TextChanged;
             textBoxServerIP.Leave += textBoxServerIP_Leave;
             // 
-            // buttonStartChatting
+            // buttonLogin
             // 
-            buttonStartChatting.BackColor = Color.Transparent;
-            buttonStartChatting.Cursor = Cursors.Hand;
-            buttonStartChatting.FlatAppearance.BorderColor = Color.White;
-            buttonStartChatting.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 255, 255);
-            buttonStartChatting.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
-            buttonStartChatting.FlatStyle = FlatStyle.Flat;
-            buttonStartChatting.Font = new Font("Segoe UI", 14F);
-            buttonStartChatting.ForeColor = Color.FromArgb(37, 91, 141);
-            buttonStartChatting.Location = new Point(498, 408);
-            buttonStartChatting.Name = "buttonStartChatting";
-            buttonStartChatting.Size = new Size(112, 69);
-            buttonStartChatting.TabIndex = 9;
-            buttonStartChatting.Text = "Login";
-            buttonStartChatting.UseVisualStyleBackColor = false;
+            buttonLogin.BackColor = Color.Transparent;
+            buttonLogin.Cursor = Cursors.Hand;
+            buttonLogin.FlatAppearance.BorderColor = Color.White;
+            buttonLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 255, 255);
+            buttonLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            buttonLogin.FlatStyle = FlatStyle.Flat;
+            buttonLogin.Font = new Font("Segoe UI", 14F);
+            buttonLogin.ForeColor = Color.FromArgb(37, 91, 141);
+            buttonLogin.Location = new Point(498, 408);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(112, 69);
+            buttonLogin.TabIndex = 9;
+            buttonLogin.Text = "Login";
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonStartChatting_Click;
             // 
             // labelDontHaveAccount
             // 
@@ -243,7 +244,7 @@
             labelInfoServerIPDomain.Name = "labelInfoServerIPDomain";
             labelInfoServerIPDomain.Size = new Size(280, 24);
             labelInfoServerIPDomain.TabIndex = 19;
-            labelInfoServerIPDomain.Text = "IP or Domain name of MelChat server.";
+            labelInfoServerIPDomain.Text = "IP/Domain:Port of MelChat Server";
             labelInfoServerIPDomain.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBoxInfoServerIPDomain
@@ -272,7 +273,7 @@
             Controls.Add(labelForgotCredentials);
             Controls.Add(linkLabelSignUp);
             Controls.Add(labelDontHaveAccount);
-            Controls.Add(buttonStartChatting);
+            Controls.Add(buttonLogin);
             Controls.Add(textBoxServerIP);
             Controls.Add(labelServerIP);
             Controls.Add(textBoxPassword);
@@ -306,7 +307,7 @@
         private TextBox textBoxPassword;
         private Label labelServerIP;
         private TextBox textBoxServerIP;
-        private Button buttonStartChatting;
+        private Button buttonLogin;
         private Label labelDontHaveAccount;
         private LinkLabel linkLabelSignUp;
         private LinkLabel linkLabelAccountRecovery;

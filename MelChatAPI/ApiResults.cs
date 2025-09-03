@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MelChatAPI
 {
-    public enum ApiRequestTypes
+    public enum ApiResults
     {
-        Unknown = -1,
+        OK = 0,
 
-        Ping = 0,
-        IdentifyMelChatClient,
+        ConnectionToServerFailed,
+        NoSuchHostOrIPIsKnown,
     }
 }

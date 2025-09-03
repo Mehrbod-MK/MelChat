@@ -1,4 +1,5 @@
-﻿using MelChatClientUI.Helpers;
+﻿using MelChatAPI.Client;
+using MelChatClientUI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,11 @@ namespace MelChatClientUI.Forms
 {
     public partial class LoginForm : Form
     {
+        public MelChatClientSession? clientSession = null;
+
+        private Bitmap errorBitmap = Properties.Resources.error;
+        private Bitmap infoBitmap = Properties.Resources.information;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -24,7 +30,7 @@ namespace MelChatClientUI.Forms
             pictureBoxInfoUsername.Visible = labelInfoUsername.Visible = true;
             if (textBoxUsername.Text.Length < 8 || textBoxUsername.Text.Length > 32)
             {
-                CommonHelpers.IndicateFieldMessage(Properties.Resources.error, "At least 8 characters, up to 32.", NotifyIndicatorTypes.Error, pictureBoxInfoUsername, labelInfoUsername);
+                CommonHelpers.IndicateFieldMessage(errorBitmap, "At least 8 characters, up to 32.", NotifyIndicatorTypes.Error, pictureBoxInfoUsername, labelInfoUsername);
                 result = false;
             }
             else
@@ -40,7 +46,7 @@ namespace MelChatClientUI.Forms
             pictureBoxInfoPassword.Visible = labelInfoPassword.Visible = true;
             if (textBoxPassword.Text.Length < 8 || textBoxPassword.Text.Length > 100)
             {
-                CommonHelpers.IndicateFieldMessage(Properties.Resources.error, "At least 8 characters, up to 100.", NotifyIndicatorTypes.Error, pictureBoxInfoPassword, labelInfoPassword);
+                CommonHelpers.IndicateFieldMessage(errorBitmap, "At least 8 characters, up to 100.", NotifyIndicatorTypes.Error, pictureBoxInfoPassword, labelInfoPassword);
                 result = false;
             }
             else
@@ -56,7 +62,7 @@ namespace MelChatClientUI.Forms
             pictureBoxInfoServerIPDomain.Visible = labelInfoServerIPDomain.Visible = true;
             if (string.IsNullOrEmpty(textBoxServerIP.Text.Trim()) || string.IsNullOrWhiteSpace(textBoxServerIP.Text.Trim()))
             {
-                CommonHelpers.IndicateFieldMessage(Properties.Resources.error, "IP/Domain cannot be empty.", NotifyIndicatorTypes.Error, pictureBoxInfoServerIPDomain, labelInfoServerIPDomain);
+                CommonHelpers.IndicateFieldMessage(errorBitmap, "IP/Domain cannot be empty.", NotifyIndicatorTypes.Error, pictureBoxInfoServerIPDomain, labelInfoServerIPDomain);
                 result = false;
             }
             else
@@ -94,6 +100,31 @@ namespace MelChatClientUI.Forms
         private void textBoxServerIP_TextChanged(object sender, EventArgs e)
         {
             ServerIPDomainInputValidation();
+        }
+
+        private bool ValidateAllFields()
+        {
+            bool result = true;
+            result &= UsernameInputValidation();
+            result &= PasswordInputValidation();
+            result &= ServerIPDomainInputValidation();
+            return result;
+        }
+
+        private void buttonStartChatting_Click(object sender, EventArgs e)
+        {
+            if (!ValidateAllFields())
+                return;
+
+            EnableUI(false);
+        }
+
+        private void EnableUI(bool enable)
+        {
+            textBoxUsername.Enabled = textBoxPassword.Enabled = textBoxServerIP.Enabled
+                = linkLabelSignUp.Enabled = linkLabelAccountRecovery.Enabled
+                = buttonLogin.Enabled
+                = enable;
         }
     }
 }
