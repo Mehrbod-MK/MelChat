@@ -24,6 +24,8 @@ namespace MelChatClientUI.Helpers
 
         public static void IndicateFieldMessage(Bitmap icon, string message, NotifyIndicatorTypes indicatorType, PictureBox iconPictureBox, Label labelInfo)
         {
+            iconPictureBox.Visible = true;
+            labelInfo.Visible = true;
             iconPictureBox.Image = icon;
             labelInfo.Text = message;
             switch(indicatorType)

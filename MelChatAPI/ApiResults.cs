@@ -10,6 +10,7 @@ namespace MelChatAPI
     {
         OK = 0,
 
+        TaskCanceledByUser,
         ConnectionToServerFailed,
         NoSuchHostOrIPIsKnown,
     }

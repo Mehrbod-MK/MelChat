@@ -22,7 +22,7 @@ namespace MelChatAPI.Logging
 
         public static async Task Log(LogLevels logLevel, string message)
         {
-            string logText = $"[{DateTime.Now}\t[{logLevel.ToString().ToUpper()}]:\t{message}";
+            string logText = $"[{DateTime.Now}]\t[{logLevel.ToString().ToUpper()}]:\t{message}";
             if (logLevel != LogLevels.Error)
                 await Console.Out.WriteLineAsync(logText);
             else
